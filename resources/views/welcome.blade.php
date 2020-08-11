@@ -48,6 +48,10 @@
                 font-size: 84px;
             }
 
+            .title-sm {
+                font-size: 70px;
+            }
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -82,6 +86,10 @@
             <div class="content">
                 <div class="title m-b-md">
                     Appointment API
+                </div>
+
+                <div class="links m-b-md">
+                    <a href="https://github.com/leealandennis/AppointmentBooking">Documentation</a>
                 </div>
 
                 <div class="links">
