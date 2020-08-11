@@ -22,8 +22,8 @@ class TimeSlotSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
 
             $timeSlot = new TimeSlot();
-            $timeSlot->startDateTime = $faker->dateTimeThisMonth()->format('Y-m-d H:i:00');
-            $timeSlot->endDateTime = (new DateTime($timeSlot->startDateTime))->modify('+15 min');
+            $timeSlot->startDateTime = $faker->dateTimeThisMonth()->format('U');
+            $timeSlot->endDateTime = (new DateTime())->setTimestamp($timeSlot->startDateTime)->modify('+15 min')->format('U');
             $timeSlot->providerId = $faker->randomElement($providers)->id;
             $isAppointment = $faker->randomElement([0, 1]);
 

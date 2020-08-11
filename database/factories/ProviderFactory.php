@@ -20,5 +20,6 @@ $factory->define(Provider::class, function (Faker $faker) {
     return [
         'firstName' => $faker->firstName,
         'lastName' => $faker->lastName,
+        'uid' => $faker->name
     ];
 });

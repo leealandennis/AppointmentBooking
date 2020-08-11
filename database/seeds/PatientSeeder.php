@@ -2,6 +2,7 @@
 
 use App\Patient;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class PatientSeeder extends Seeder
 {
@@ -12,6 +13,16 @@ class PatientSeeder extends Seeder
      */
     public function run()
     {
-        factory(Patient::class, 25)->create();
+        $faker = Faker::create();
+
+        for ($i = 0; $i < 25; $i++) {
+            $patient = new Patient();
+            $firstName = $faker->firstName;
+            $lastName = $faker->lastName;
+            $patient->firstName = $firstName;
+            $patient->lastName = $lastName;
+            $patient->uid = $firstName . $lastName;
+            $patient->save();
+        }
     }
 }
