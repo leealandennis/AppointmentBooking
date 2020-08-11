@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/clinics', 'ClinicController@index');
+Route::get('/patients', 'PatientController@index');
+Route::get('/patients/{uid}', 'PatientController@show');
+Route::get('/providers', 'ProviderController@index');
+Route::get('/providers/{id}', 'ProviderController@show');
+Route::get('/timeslots', 'TimeSlotController@index');
+Route::get('/timeslots/{id}', 'TimeSlotController@show');
+Route::get('/appointments', 'TimeSlotController@getAppointments');
+Route::get('/availabilities', 'TimeSlotController@getAvailabilities');
+Route::post('/availabilities/book', 'TimeSlotController@book');

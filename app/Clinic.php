@@ -8,6 +8,8 @@ class Clinic extends Model
 {
     private static $instance = null;
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function __construct()
     {
         parent::__construct();

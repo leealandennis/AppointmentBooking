@@ -18,7 +18,8 @@ use Faker\Generator as Faker;
 
 $factory->define(TimeSlot::class, function (Faker $faker) {
     return [
-        'startDateTime' => $faker->dateTimeThisMonth,
+        'startDateTime' => $faker->dateTimeThisMonth->getTimestamp(),
+        'endDateTime' => $faker->dateTimeThisMonth->getTimestamp(),
         'patientId' => $faker->numberBetween(1),
         'providerId' => $faker->numberBetween(1)
     ];

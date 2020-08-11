@@ -15,8 +15,8 @@ class CreateTimeSlotsTable extends Migration
     {
         Schema::create('time_slots', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('startDateTime');
-            $table->timestamp('endDateTime')->nullable()->default(null);
+            $table->integer('startDateTime');
+            $table->integer('endDateTime');
             $table->integer('patientId')->nullable()->default(null);
             $table->integer('providerId');
             $table->timestamps();
